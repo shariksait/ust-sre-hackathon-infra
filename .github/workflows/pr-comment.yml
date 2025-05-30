@@ -22,13 +22,10 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### 🚨 Incident Alert: Potential Recurrence Detected
-                    👋 A potential recurrence of **Incident [INC-2478](
-                    https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsnYoeB_yToXPaD185rPo8ZqVVI/edit?tab=t.0#heading=h.jcsA Document  
-                    [View RCA Document](https://docs.google.com 
-                    ServiceNow CHG372671G
+              body: `👋 Potential recurrence of Incident **INC-2478 (April 2024)** detected.Add commentMore actions
+                    **Root cause**: Missing subnet configurations.
+                    📄 [RCA Document](https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsnYoeB_yToXPaD185rPo8ZqVVI/edit?tab=t.0#heading=h.jcsma2g68ap1)  
+                    🛠️ [ServiceNow CHG372671G](https://en.wikipedia.org/wiki/ServiceNow)
 
-                     ---
-
-                   Please review and take necessary action.`
+                    ⚠️ Risk Level: **Medium**'
             })
