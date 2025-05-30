@@ -26,6 +26,5 @@ jobs:
                     **Root cause**: Missing subnet configurations.
                     📄 [RCA Document](https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsnYoeB_yToXPaD185rPo8ZqVVI/edit?tab=t.0#heading=h.jcsma2g68ap1)  
                     🛠️ [ServiceNow CHG372671G](https://en.wikipedia.org/wiki/ServiceNow)
-
                     ⚠️ Risk Level: **Medium**'
             })
