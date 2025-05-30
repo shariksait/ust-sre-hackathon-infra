@@ -23,6 +23,13 @@ resource "aws_subnet" "sub3" {
   map_public_ip_on_launch = true
 }
 
+resource "aws_subnet" "sub4" {
+  vpc_id                  = aws_vpc.myvpc.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "us-west-1b"
+  map_public_ip_on_launch = true
+}
+
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.myvpc.id
 }
