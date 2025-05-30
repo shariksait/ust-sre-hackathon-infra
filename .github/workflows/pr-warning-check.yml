@@ -1,0 +1,30 @@
+name: PR Warning Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  check-warning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set warning if needed
+        uses: LouisBrunner/checks-action@v1.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Manual Review Required
+          conclusion: action_required
+          status: completed
+          output: |
+            {
+              "title": "⚠️ Manual review needed",
+              "summary": "Potential recurrence of Incident INC-2478 (April 2024) detected. Root cause: Missing circuit breaker in payments service. Current change modifies the same module. Please review.",
+              "text": "This PR modifies `payments`. A manual review is strongly recommended."
+            }
+          action_url: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.pull_request.number }}
+          
+          
