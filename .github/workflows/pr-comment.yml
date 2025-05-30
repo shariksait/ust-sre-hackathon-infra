@@ -1,32 +1,34 @@
-
 name: Comment on Pull Request
 
 on:
-  pull_request:
-    types: [opened]
+  pull_request:
+    types: [opened]
 
 permissions:
-  pull-requests: write  # ✅ Needed to comment on PRs
-  contents: read
+  pull-requests: write
+  contents: read
 
 jobs:
-  comment:
-    runs-on: ubuntu-latest
+  comment:
+    runs-on: ubuntu-latest
 
-    steps:
-      - name: Comment on the PR
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `### 🚨 Incident Alert: Potential Recurrence Detected
-                    👋 A potential recurrence of **Incident [INC-2478](https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsne
-                     > Missing subnet configurations. 
+    steps:
+      - name: Comment on the PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `### 🚨 Incident Alert: Potential Recurrence Detected
+                    👋 A potential recurrence of **Incident [INC-2478](
+                    https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsnYoeB_yToXPaD185rPo8ZqVVI/edit?tab=t.0#heading=h.jcsA Document  
+                    [View RCA Document](https://docs.google.com 
+                    ServiceNow CHG372671G
+
                      ---
-                    #### 📄 RCA Document
-                     [View RCA Document](https://docs.google.com/document/d/1bO7VnWskuSD8p9caEsnYoeB_yToXPaD185rPo8ZqVVI/edit?ction.`
-            })
+
+                   Please review and take necessary action.`
+            })
